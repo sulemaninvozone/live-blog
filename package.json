@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES=true gatsby build --log-pages",
+    "build": "cross-env GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES=true gatsby build --log-pages",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "start": "npm run develop",
@@ -16,6 +16,7 @@
   "license": "ISC",
   "dependencies": {
     "autoprefixer": "^10.2.3",
+    "cross-env": "^7.0.3",
     "gatsby": "^2.31.1",
     "gatsby-plugin-postcss": "^3.6.0",
     "gatsby-source-graphql": "^2.13.0",
