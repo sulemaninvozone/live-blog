@@ -2,15 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import Post from '../components/Post';
-
-const getPostContent =  (value) => {
-return JSON.parse(value)
-    .filter((el) => Array.isArray(el.content))
-    .map((el) => el.content)
-    .flat()
-    .map((el) => el.text)
-    .join(' ')
-};
+import { getPostContent } from '../utils/helpers';
 
 export default function Home({ data }) {
   const {
@@ -22,10 +14,10 @@ export default function Home({ data }) {
     <Layout>
       <section className="px-3">
         {posts
-          .map((el) => ({...el, content: getPostContent(el.content)}))
+          .map((el) => ({ ...el, content: getPostContent(el.content) }))
           .filter((post) => !!post.title && !!post.content)
           .map((post) => (
-            <Post key={post._id} post={post} />
+            <Post key={post._id} post={post} isSingle={false} />
           ))}
       </section>
     </Layout>
