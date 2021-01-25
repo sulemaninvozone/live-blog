@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql, Link } from 'gatsby';
 import Post from '../components/Post';
-import Layout from '../components/Layout'
+import Layout from '../components/Layout';
 import { getPostContent } from '../utils/helpers';
 
 const BlogPost = ({ data }) => {
@@ -9,12 +9,12 @@ const BlogPost = ({ data }) => {
     livecms: { post },
   } = data;
   return (
-      <Layout>
-    <section className="px-3">
-      <Post post={{ ...post, content: getPostContent(post.content) }} isSingle={false} />
-      <Link to="/">Back to home</Link>
-    </section>
-      </Layout>
+    <Layout>
+      <section className="px-3">
+        <Post post={{ ...post, content: getPostContent(post.content) }} isSingle={false} />
+        <Link to="/">Back to home</Link>
+      </section>
+    </Layout>
   );
 };
 

@@ -9,9 +9,11 @@ const Post = ({ post, isSingle }) => {
           {post.title}
         </Link>
         <p className="pb-6">{post.content}</p>
-       { isSingle && <Link to={`/posts/${post._id}`} className="uppercase text-gray-800 hover:text-black">
-          Continue Reading
-        </Link> }
+        {isSingle && (
+          <Link to={`/posts/${post._id}`} className="uppercase text-gray-800 hover:text-black">
+            Continue Reading
+          </Link>
+        )}
       </div>
     </article>
   );
