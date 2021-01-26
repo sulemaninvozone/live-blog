@@ -2,7 +2,7 @@ const express = require('express');
 const { spawn } = require('child_process');
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 8000;
 
 // Serve gatsby build site
 app.use(express.static(`${__dirname}/public`));
