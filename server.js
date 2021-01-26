@@ -2,6 +2,7 @@ const express = require('express');
 const { spawn } = require('child_process');
 
 const app = express();
+const port = process.env.PORT || 3000;
 
 // Serve gatsby build site
 app.use(express.static(`${__dirname}/public`));
@@ -23,6 +24,6 @@ app.post('/deploy', async (req, res) => {
   res.send('Build is in progress')
 });
 
-app.listen(3000, () => {
-  console.log(`Server is listening on port ${3000}`);
+app.listen(port, () => {
+  console.log(`Server is listening on port ${port}`);
 });
