@@ -23,6 +23,7 @@
     "gatsby": "^2.31.1",
     "gatsby-plugin-postcss": "^3.6.0",
     "gatsby-source-graphql": "^2.13.0",
+    "perfy": "^1.1.5",
     "postcss": "^8.2.4",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
