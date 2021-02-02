@@ -14,8 +14,8 @@ export default function Home({ data }) {
     <Layout>
       <section className="px-3">
         {posts
+          .filter((post) => post.status === 'published' && post.title && post.content)
           .map((el) => ({ ...el, content: getPostContent(el.content) }))
-          .filter((post) => !!post.title && !!post.content)
           .map((post) => (
             <Post key={post._id} post={post} isSingle={false} />
           ))}
